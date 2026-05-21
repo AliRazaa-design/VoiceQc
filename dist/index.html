@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceQC — Batch Audio QC for Game Localization Studios</title>
+    <meta name="description"
+        content="VoiceQC automates audio quality control for video game localization. Catch script mismatches, naming errors, and audio issues across 50+ languages before they ship.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════ NAV ═══════════════════════════════════════════ -->
+    <nav class="nav" id="main-nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo" id="nav-logo">
+                <img src="assets/logo.png" alt="VoiceQC Logo" class="nav__logo-img">
+            </a>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#hero" class="nav__link nav__link--active">Home</a></li>
+                <li><a href="#origin" class="nav__link">Origin</a></li>
+                <li><a href="#features" class="nav__link">Features</a></li>
+                <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+                <li><a href="#pricing" class="nav__link">Pricing</a></li>
+            </ul>
+            <a href="login.html" class="nav__cta" id="nav-cta">Log in</a>
+            <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
+    <header class="hero section--navy" id="hero">
+        <div class="hero__grid">
+            <div class="hero__content">
+                <p class="hero__eyebrow">Audio QC for Game Localization</p>
+                <h1 class="hero__headline" id="hero-headline">
+                    10,000 files.<br>
+                    One deadline.<br>
+                    <span class="hero__headline--accent">Zero errors.</span>
+                </h1>
+                <p class="hero__subhead">
+                    VoiceQC was built in the trenches of game localization — batch audio QC so your studio never misses
+                    a script mismatch again.
+                </p>
+                <div class="hero__actions">
+                    <a href="signup.html" class="btn btn--primary" id="hero-cta">See it in action</a>
+                    <a href="#features" class="btn btn--ghost" id="hero-secondary">Explore features</a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__terminal" id="hero-terminal">
+                    <div class="terminal__bar">
+                        <div class="terminal__dots">
+                            <span class="terminal__dot terminal__dot--red"></span>
+                            <span class="terminal__dot terminal__dot--yellow"></span>
+                            <span class="terminal__dot terminal__dot--green"></span>
+                        </div>
+                        <div class="terminal__title">voiceqc --batch ./project_alpha</div>
+                        <div></div> <!-- Spacer for grid -->
+                    </div>
+                    <div class="terminal__body">
+                        <div class="terminal__line">
+                            <span class="terminal__prompt">$</span> Scanning 10,247 audio files...
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__check">✓</span> Filename conventions validated
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__check">✓</span> Script-to-audio mapping verified
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__check">✓</span> Duration anomalies flagged: 3
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__check">✓</span> Missing translations: 0
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__warn">⚠</span> Script mismatch detected: line_0847_FR
+                        </div>
+                        <div class="terminal__result-row terminal__line">
+                            <div class="terminal__line-divider"></div>
+                            <span class="terminal__result">QC COMPLETE in 4.2s</span>
+                            <div class="terminal__line-divider"></div>
+                        </div>
+                        <div class="terminal__line">
+                            <span class="terminal__prompt">$</span><span class="terminal__cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════ STATS BAR ═══════════════════════════════════════ -->
+    <section class="stats" id="stats">
+        <div class="stats__inner">
+            <div class="stats__item" id="stat-languages">
+                <span class="stats__number"><span class="counter" data-target="50">0</span>+</span>
+                <span class="stats__label">Languages</span>
+            </div>
+            <div class="stats__divider"></div>
+            <div class="stats__item" id="stat-files">
+                <span class="stats__number"><span class="counter" data-target="10000">0</span>+</span>
+                <span class="stats__label">Files per week</span>
+            </div>
+            <div class="stats__divider"></div>
+            <div class="stats__item" id="stat-countries">
+                <span class="stats__number"><span class="counter" data-target="20">0</span>+</span>
+                <span class="stats__label">Countries</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ ORIGIN STORY ═══════════════════════════════════════ -->
+    <section class="origin" id="origin">
+        <div class="origin__decoration">
+            <div class="ui-tag ui-tag--1">audio_402_de.wav</div>
+            <div class="ui-tag ui-tag--2">DURATION_ERROR</div>
+            <div class="ui-tag ui-tag--3">MISSING_METADATA</div>
+        </div>
+        <div class="origin__image-wrap">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop"
+                alt="Audio Studio" class="origin__bg-img">
+        </div>
+        <div class="origin__grid">
+            <div class="origin__content">
+                <span class="section-label">Our Origin</span>
+                <h2 class="origin__title">Born from a 48-hour<br>crisis in localization</h2>
+                <div class="origin__body">
+                    <div class="origin__text">
+                        <p>
+                            In 2021, a AAA studio shipped 14,000 localized voice files for a major RPG launch across 16
+                            languages. On day one, QA flagged 340 script mismatches — wrong lines recorded against wrong
+                            filenames. The patch cost six figures and a week of studio downtime.
+                        </p>
+                        <p>
+                            The localization lead on that project swore it would never happen again. Over one weekend,
+                            they wrote the first version of VoiceQC: a batch processor that cross-referenced every audio
+                            filename against the master script, flagged duration anomalies, and generated a clean report
+                            before anything left the recording booth.
+                        </p>
+                        <p>
+                            That weekend script became the foundation of what VoiceQC is today — a purpose-built
+                            platform that sits between your recording studio and your build pipeline. We've processed
+                            over 2 million files for studios on four continents, and we haven't let a naming mismatch
+                            slip through yet.
+                        </p>
+                    </div>
+                    <aside class="origin__pullquote">
+                        <blockquote>
+                            "We were shipping 10,000 files a week and checking them by hand in spreadsheets. One typo in
+                            a filename could cascade into hundreds of broken triggers in-engine. VoiceQC made that
+                            entire category of error extinct."
+                        </blockquote>
+                        <cite>— Localization Director, AAA Studio</cite>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PROCESS (HOW IT WORKS) ═══════════════════════════════════════ -->
+    <section class="process section--white" id="process">
+        <div class="process__header">
+            <span class="section-label">THE PROCESS</span>
+            <h2 class="process__title">From upload to clean<br>report in minutes.</h2>
+            <p class="process__subhead">No spreadsheets. No manual checking. No missed mismatches.</p>
+        </div>
+
+        <div class="process__container">
+            <div class="process__grid">
+                <div class="process-card" id="process-step-1">
+                    <span class="process-card__step">Step 1</span>
+                    <div class="process-card__code"><span class="code-prompt">$</span> upload ./project_files</div>
+                    <h3 class="process-card__heading">Upload Your Files</h3>
+                    <p class="process-card__text">Drag in your entire batch — audio files and master script together.
+                        Any format, any volume.</p>
+                </div>
+                <div class="process-card" id="process-step-2">
+                    <span class="process-card__step">Step 2</span>
+                    <div class="process-card__code"><span class="code-prompt">$</span> voiceqc --match --validate</div>
+                    <h3 class="process-card__heading">Automatic QC Runs</h3>
+                    <p class="process-card__text">VoiceQC transcribes every file in 50+ languages, validates filenames
+                        and cross-references every line against your script.</p>
+                </div>
+                <div class="process-card" id="process-step-3">
+                    <span class="process-card__step">Step 3</span>
+                    <div class="process-card__code"><span class="code-prompt">$</span> export --report clean</div>
+                    <h3 class="process-card__heading">Export Clean Report</h3>
+                    <p class="process-card__text">Download a flagged mismatch report and export tagged audio files —
+                        ready to send directly to your client.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="process__actions">
+            <a href="signup.html" class="btn btn--primary">See it in action</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ FEATURES ═══════════════════════════════════════ -->
+    <section class="features" id="features">
+        <div class="features__header">
+            <span class="section-label section-label--dark">Capabilities</span>
+            <h2 class="features__title">Everything your QC pipeline<br>has been missing</h2>
+        </div>
+        <div class="features__grid">
+            <div class="feature-card" id="feature-match">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <path d="M8 13h8" />
+                        <path d="M8 17h8" />
+                        <path d="M10 9H8" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Match Scripts to Audio</h3>
+                <p class="feature-card__desc">Upload the final script and find errors</p>
+            </div>
+            <div class="feature-card" id="feature-tagging">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Custom Tagging</h3>
+                <p class="feature-card__desc">Create custom labels and color coding to match the way you work.</p>
+            </div>
+            <div class="feature-card" id="feature-bulk">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Bulk Audio Upload</h3>
+                <p class="feature-card__desc">Process multiple files simultaneously and continue to work as
+                    transcriptions happen in the background</p>
+            </div>
+            <div class="feature-card" id="feature-reporting">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Real-Time Reporting</h3>
+                <p class="feature-card__desc">Know the status of your QC pipeline and take control of on time deliveries
+                </p>
+            </div>
+            <div class="feature-card" id="feature-collaboration">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Team Collaboration</h3>
+                <p class="feature-card__desc">Share projects with team members or outside editors ( Coming Soon!)</p>
+            </div>
+            <div class="feature-card" id="feature-security">
+                <div class="feature-card__icon-box">
+                    <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <div class="icon-glow"></div>
+                </div>
+                <h3 class="feature-card__title">Secure Cloud Storage</h3>
+                <p class="feature-card__desc">Enterprise-level security for your sensitive data</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ TESTIMONIALS ═══════════════════════════════════════ -->
+    <section class="testimonials section--navy" id="testimonials">
+        <div class="testimonials__header">
+            <span class="section-label">What Studios Say</span>
+            <h2 class="testimonials__title">Trusted by localization<br>teams worldwide</h2>
+        </div>
+        <div class="carousel" id="testimonial-carousel">
+            <div class="carousel__track">
+                <div class="carousel__slide carousel__slide--active" id="testimonial-1">
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__text">"VoiceQC caught 47 naming mismatches in our Japanese build
+                            that would have taken our QA team three days to find manually. It found them in eleven
+                            seconds."</p>
+                        <footer class="testimonial-card__footer">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&h=256&auto=format&fit=crop"
+                                alt="Maria Kowalski" class="testimonial-card__avatar">
+                            <div>
+                                <cite class="testimonial-card__name">Maria Kowalski</cite>
+                                <span class="testimonial-card__role">Localization Lead, Orbit Games</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="carousel__slide" id="testimonial-2">
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__text">"We process 8,000 files per milestone across 14 languages.
+                            Before VoiceQC, that meant a dedicated QC person for two weeks. Now it's part of our CI
+                            pipeline and runs in under a minute."</p>
+                        <footer class="testimonial-card__footer">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&h=256&auto=format&fit=crop"
+                                alt="Jean-Luc Dubois" class="testimonial-card__avatar">
+                            <div>
+                                <cite class="testimonial-card__name">Jean-Luc Dubois</cite>
+                                <span class="testimonial-card__role">Audio Director, Polaris Interactive</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="carousel__slide" id="testimonial-3">
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__text">"The reporting alone is worth the subscription. We send the
+                            PDF straight to our clients and it's become a selling point — proof that every file was
+                            verified before delivery."</p>
+                        <footer class="testimonial-card__footer">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop"
+                                alt="Ravi Anand" class="testimonial-card__avatar">
+                            <div>
+                                <cite class="testimonial-card__name">Ravi Anand</cite>
+                                <span class="testimonial-card__role">Studio Manager, Lingua Dynamics</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="carousel__slide" id="testimonial-4">
+                    <blockquote class="testimonial-card">
+                        <p class="testimonial-card__text">"We integrated VoiceQC into our Perforce workflow. Every time
+                            an audio asset is checked in, it runs automatically. Our error rate dropped from 2.3% to
+                            effectively zero."</p>
+                        <footer class="testimonial-card__footer">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=256&h=256&auto=format&fit=crop"
+                                alt="Seo-yun Kim" class="testimonial-card__avatar">
+                            <div>
+                                <cite class="testimonial-card__name">Seo-yun Kim</cite>
+                                <span class="testimonial-card__role">Tech Lead, Nexon Localization</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="carousel__controls">
+                <button class="carousel__btn carousel__btn--prev" id="carousel-prev" aria-label="Previous testimonial">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="carousel__dots" id="carousel-dots">
+                    <button class="carousel__dot carousel__dot--active" data-index="0"
+                        aria-label="Testimonial 1"></button>
+                    <button class="carousel__dot" data-index="1" aria-label="Testimonial 2"></button>
+                    <button class="carousel__dot" data-index="2" aria-label="Testimonial 3"></button>
+                    <button class="carousel__dot" data-index="3" aria-label="Testimonial 4"></button>
+                </div>
+                <button class="carousel__btn carousel__btn--next" id="carousel-next" aria-label="Next testimonial">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ CASE STUDIES ═══════════════════════════════════════ -->
+    <section class="cases section--white" id="cases">
+        <div class="cases__header">
+            <span class="section-label">CASE STUDIES</span>
+            <h2 class="cases__title">Real studios. Real results.</h2>
+            <p class="cases__subhead">See how localization teams use VoiceQC to ship faster and cleaner.</p>
+        </div>
+
+        <div class="cases__grid-wrapper">
+            <!-- Featured Case Study (Left) -->
+            <div class="case-card case-card--featured">
+                <div class="case-card__content">
+                    <span class="case-card__badge">FEATURED — VIDEO GAME LOCALIZATION</span>
+                    <h3 class="case-card__headline">How a game studio eliminated script mismatches across 16 languages
+                        before launch.</h3>
+                    <p class="case-card__desc">Thousands of audio files. One impossible deadline. Here's how VoiceQC
+                        made it work.</p>
+
+                    <div class="case-card__metrics-section">
+                        <div class="case-card__divider"></div>
+                        <div class="case-card__metrics-label">
+                            <span class="orange-dot"></span> MEASURED IMPACT
+                        </div>
+                        <div class="case-card__metrics-grid">
+                            <div class="metric-tile">
+                                <div class="metric-tile__header">
+                                    <svg class="metric-tile__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    <span class="metric-tile__label">Time Saved</span>
+                                </div>
+                                <div class="metric-tile__value">74%</div>
+                                <div class="metric-tile__subtext">reduction in manual QC hours</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div class="metric-tile__header">
+                                    <svg class="metric-tile__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23" />
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                    <span class="metric-tile__label">Cost Reduced</span>
+                                </div>
+                                <div class="metric-tile__value">6 figures</div>
+                                <div class="metric-tile__subtext">saved in post-patch fixes</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div class="metric-tile__header">
+                                    <svg class="metric-tile__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                    </svg>
+                                    <span class="metric-tile__label">Productivity</span>
+                                </div>
+                                <div class="metric-tile__value">3x</div>
+                                <div class="metric-tile__subtext">more files per week</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn--white">Read Full Case Study →</a>
+                </div>
+            </div>
+
+            <!-- Side Stack (Right) -->
+            <div class="cases__side-stack">
+                <div class="case-card case-card--small">
+                    <span class="case-card__tag case-card__tag--orange">LOCALIZATION AGENCY</span>
+                    <h4 class="case-card__small-title">Cut manual QC time from 3 days to 4 hours.</h4>
+                    <p class="case-card__small-desc">Process optimization for multi-client localization workflows.</p>
+                    <a href="#" class="case-card__link">Read case study →</a>
+                </div>
+                <div class="case-card case-card--small">
+                    <span class="case-card__tag case-card__tag--orange">INDIE STUDIO</span>
+                    <h4 class="case-card__small-title">8,000 files delivered. Zero filename errors.</h4>
+                    <p class="case-card__small-desc">How a small team shipped a major update without a dedicated QC
+                        lead.</p>
+                    <a href="#" class="case-card__link">Read case study →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cases__footer">
+            <a href="#" class="btn btn--outline">View All Case Studies</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PRICING ═══════════════════════════════════════ -->
+    <section class="pricing section--white" id="pricing">
+        <div class="pricing__header">
+            <span class="section-label section-label--dark">Pricing</span>
+            <h2 class="pricing__title">Plans that scale with<br>your pipeline</h2>
+        </div>
+
+        <!-- Pricing Mobile Navigation (Visible on Mobile only) -->
+        <div class="pricing__nav-mobile">
+            <button class="pricing__nav-btn" id="pricing-prev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <div class="pricing__indicators">
+                <span class="pricing__indicator"></span>
+                <span class="pricing__indicator active"></span>
+                <span class="pricing__indicator"></span>
+            </div>
+            <button class="pricing__nav-btn" id="pricing-next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="pricing__grid" id="pricing-grid">
+            <div class="pricing-card" id="plan-indie">
+                <div class="pricing-card__header">
+                    <h3 class="pricing-card__name">Indie</h3>
+                    <p class="pricing-card__desc">For solo devs and small studios</p>
+                </div>
+                <div class="pricing-card__price">
+                    <span class="pricing-card__amount">$49</span>
+                    <span class="pricing-card__period">/month</span>
+                </div>
+                <ul class="pricing-card__features">
+                    <li>Up to 2,000 files / month</li>
+                    <li>5 languages</li>
+                    <li>Script matching</li>
+                    <li>Naming convention QC</li>
+                    <li>CSV reports</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="#cta" class="btn btn--outline" id="plan-indie-cta">Get started</a>
+            </div>
+            <div class="pricing-card pricing-card--featured" id="plan-studio">
+                <div class="pricing-card__badge">Most Popular</div>
+                <div class="pricing-card__header">
+                    <h3 class="pricing-card__name">Studio</h3>
+                    <p class="pricing-card__desc">For production localization teams</p>
+                </div>
+                <div class="pricing-card__price">
+                    <span class="pricing-card__amount">$199</span>
+                    <span class="pricing-card__period">/month</span>
+                </div>
+                <ul class="pricing-card__features">
+                    <li>Up to 25,000 files / month</li>
+                    <li>25 languages</li>
+                    <li>All QC modules</li>
+                    <li>Duration analysis</li>
+                    <li>PDF + CSV reports</li>
+                    <li>CI/CD integration</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#cta" class="btn btn--primary" id="plan-studio-cta">Get started</a>
+            </div>
+            <div class="pricing-card" id="plan-enterprise">
+                <div class="pricing-card__header">
+                    <h3 class="pricing-card__name">Enterprise</h3>
+                    <p class="pricing-card__desc">For AAA studios and publishers</p>
+                </div>
+                <div class="pricing-card__price">
+                    <span class="pricing-card__amount">Custom</span>
+                </div>
+                <ul class="pricing-card__features">
+                    <li>Unlimited files</li>
+                    <li>50+ languages</li>
+                    <li>All QC modules</li>
+                    <li>Custom validation rules</li>
+                    <li>On-premise deployment</li>
+                    <li>Perforce / Git integration</li>
+                    <li>Dedicated account manager</li>
+                    <li>SLA guarantee</li>
+                </ul>
+                <a href="#cta" class="btn btn--outline" id="plan-enterprise-cta">Contact sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ LEAD MAGNET ═══════════════════════════════════════ -->
+    <section class="lead-magnet">
+        <div class="lead-magnet__container">
+            <div class="lead-magnet__grid">
+                <!-- Left Column -->
+                <div class="lead-magnet__content">
+                    <span class="lead-magnet__eyebrow"><span class="orange-dot"></span> FREE RESOURCE</span>
+                    <h2 class="lead-magnet__headline">Get the free guide to faster dubbing workflows.</h2>
+                    <p class="lead-magnet__text">Practical steps used by real localization studios to cut QC time and
+                        ship cleaner audio — no fluff, straight to the point.</p>
+
+                    <div class="lead-magnet__trust">
+                        <div class="trust-item">
+                            <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Instant download</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Used by 200+ studios</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="lead-magnet__form-area">
+                    <form class="lead-magnet__form">
+                        <input type="email" class="lead-magnet__input" placeholder="your@studio.com" required>
+                        <button type="submit" class="lead-magnet__btn">Send me the guide →</button>
+                    </form>
+                    <p class="lead-magnet__disclaimer">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ CTA ═══════════════════════════════════════ -->
+    <section class="cta section--white" id="cta">
+        <div class="cta__inner">
+            <h2 class="cta__title">Ready to eliminate<br>script mismatches?</h2>
+            <p class="cta__text">Book a 15-minute demo and we'll run VoiceQC on your actual project files — live.</p>
+            <div class="cta__actions">
+                <a href="signup.html" class="btn btn--primary btn--large" id="cta-demo">See it in action</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+    <footer class="footer section--navy" id="footer">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <a href="#" class="nav__logo">
+                    <img src="assets/logo.png" alt="VoiceQC Logo" class="nav__logo-img">
+                </a>
+                <p class="footer__tagline">Batch audio QC for game localization studios.</p>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Product</h4>
+                <ul class="footer__links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Changelog</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Company</h4>
+                <ul class="footer__links">
+                    <li><a href="#origin">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Resources</h4>
+                <ul class="footer__links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Status Page</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 VoiceQC. All rights reserved.</p>
+            <div class="footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — VoiceQC</title>
+    <meta name="description" content="Manage your batch audio quality control pipeline.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════ NAV ═══════════════════════════════════════════ -->
+    <nav class="nav" id="main-nav" style="background-color: var(--color-navy); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo" id="nav-logo">
+                <img src="assets/logo.png" alt="VoiceQC Logo" class="nav__logo-img">
+            </a>
+            <!-- Links are hidden inside the app -->
+            <ul class="nav__links" id="nav-links" style="visibility: hidden;">
+            </ul>
+            <a href="index.html" class="nav__cta" id="nav-cta">Log out</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ DASHBOARD SECTION ═══════════════════════════════════════════ -->
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            
+            <!-- Upload Grid -->
+            <div class="upload-grid">
+                
+                <!-- Audio Upload Zone -->
+                <div class="upload-zone">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-zone__title">Drag and drop files here</p>
+                    <button class="btn btn--primary upload-btn">Choose Files</button>
+                    <!-- Invisible placeholder to balance flex alignment with the right tile -->
+                    <div class="format-info-link" aria-hidden="true" style="visibility: hidden; pointer-events: none;">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>
+                        Placeholder
+                    </div>
+                </div>
+
+                <!-- CSV Upload Zone -->
+                <div class="upload-zone">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-zone__title">Upload Scripts CSV</p>
+                    <button class="btn btn--primary upload-btn">Choose File</button>
+                    <a href="#" class="format-info-link" id="format-info-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        Format Info
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Informational Panel -->
+            <div class="info-panel animated-onboarding">
+                <div class="onboarding-header">
+                    <div class="info-panel__icon-wrapper">
+                        <svg class="info-panel__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    
+                    <h2 class="info-panel__title">Welcome to Voice Quality Control</h2>
+                    <p class="info-panel__subtitle">Start by uploading audio files or a scripts CSV file. You can:</p>
+                </div>
+
+                <div class="onboarding-progress-bar">
+                    <div class="onboarding-progress-fill"></div>
+                </div>
+                
+                <div class="onboarding-steps">
+                    <!-- Step 1 -->
+                    <div class="onboarding-step">
+                        <div class="step-content">
+                            <div class="step-text">
+                                <p><strong>1. Upload Audio Files:</strong> Drag and drop .wav files or click "Choose Files" to select them. Files are uploaded in batches for better performance.</p>
+                            </div>
+                            <div class="step-icon-right">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="onboarding-step">
+                        <div class="step-content">
+                            <div class="step-text">
+                                <p><strong>2. Upload Scripts CSV:</strong> Upload expected scripts for your audio files. The CSV should have columns: filename, script_text</p>
+                            </div>
+                            <div class="step-icon-right">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="8" y1="13" x2="16" y2="13"></line>
+                                    <line x1="8" y1="17" x2="16" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="onboarding-step">
+                        <div class="step-content">
+                            <div class="step-text">
+                                <p><strong>3. Compare Results:</strong> Once both audio and scripts are uploaded, you can compare the actual transcriptions with expected scripts.</p>
+                            </div>
+                            <div class="step-icon-right">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+    <footer class="footer section--navy" id="footer">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <a href="index.html" class="nav__logo">
+                    <img src="assets/logo.png" alt="VoiceQC Logo" class="nav__logo-img">
+                </a>
+                <p class="footer__tagline">Batch audio QC for game localization studios.</p>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Product</h4>
+                <ul class="footer__links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Changelog</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Company</h4>
+                <ul class="footer__links">
+                    <li><a href="index.html#origin">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__heading">Resources</h4>
+                <ul class="footer__links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Status Page</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 VoiceQC. All rights reserved.</p>
+            <div class="footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════ MODAL ═══════════════════════════════════════════ -->
+    <div class="modal" id="format-modal">
+        <div class="modal__overlay" id="format-modal-close-bg"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="format-modal-close" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__header">
+                <h3 class="modal__title">Script CSV Format Instructions</h3>
+            </div>
+            <div class="modal__body">
+                <p class="modal__desc">Upload a CSV file containing your expected script text for each audio file.</p>
+                
+                <div class="code-section">
+                    <h4 class="code-section__title">CSV Format (with header):</h4>
+                    <div class="code-block">
+<pre><code>filename,script_text
+audio1.wav,"This is the expected text for audio 1"
+audio2.wav,"Line 1 of script
+Line 2 of script
+Line 3 of script"</code></pre>
+                    </div>
+                </div>
+
+                <div class="code-section">
+                    <h4 class="code-section__title">CSV Format (without header):</h4>
+                    <div class="code-block">
+<pre><code>audio1.wav,"This is the expected text for audio 1"
+audio2.wav,"This is the expected text for audio 2"
+audio3,"This can also work without the .wav extension"</code></pre>
+                    </div>
+                </div>
+
+                <div class="modal__info-box">
+                    <div class="modal__info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <ul class="modal__info-list">
+                        <li><span>&bull;</span> <div><strong>Header row is optional</strong> - the parser will auto-detect it</div></li>
+                        <li><span>&bull;</span> <div><strong>Multi-line scripts</strong> are supported - wrap them in double quotes</div></li>
+                        <li><span>&bull;</span> <div><strong>Filenames must match</strong> the audio files you upload (including extensions)</div></li>
+                        <li><span>&bull;</span> <div><strong>Empty rows</strong> are automatically skipped</div></li>
+                        <li><span>&bull;</span> <div><strong>Both filename and script text</strong> are required for each row</div></li>
+                        <li><span>&bull;</span> <div>Scripts can be uploaded before or after audio files</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('format-modal');
+            const openBtn = document.getElementById('format-info-btn');
+            const closeBtn = document.getElementById('format-modal-close');
+            const overlay = document.getElementById('format-modal-close-bg');
+
+            if(openBtn && modal) {
+                openBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('modal--active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            const closeModal = () => {
+                modal.classList.remove('modal--active');
+                document.body.style.overflow = '';
+            };
+
+            if(closeBtn) closeBtn.addEventListener('click', closeModal);
+            if(overlay) overlay.addEventListener('click', closeModal);
+        });
+    </script>
+</body>
+</html>

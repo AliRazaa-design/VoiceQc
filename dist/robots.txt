@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Hostinger optimization
+Crawl-delay: 10
+
+# Sitemap location (Update once domain is set)
+# Sitemap: https://yourdomain.com/sitemap.xml
