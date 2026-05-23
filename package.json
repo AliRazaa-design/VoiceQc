@@ -1,0 +1,11 @@
+{
+  "name": "voiceqc",
+  "version": "1.0.0",
+  "description": "Local development server for VoiceQC",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

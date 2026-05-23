@@ -43,7 +43,8 @@
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                     </svg>
                     <p class="upload-zone__title">Drag and drop files here</p>
-                    <button class="btn btn--primary upload-btn">Choose Files</button>
+                    <input type="file" id="audio-upload-input" accept=".wav" multiple style="display: none;">
+                    <button id="audio-upload-btn" class="btn btn--primary upload-btn">Choose Files</button>
                     <!-- Invisible placeholder to balance flex alignment with the right tile -->
                     <div class="format-info-link" aria-hidden="true" style="visibility: hidden; pointer-events: none;">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>
@@ -59,7 +60,8 @@
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                     </svg>
                     <p class="upload-zone__title">Upload Scripts CSV</p>
-                    <button class="btn btn--primary upload-btn">Choose File</button>
+                    <input type="file" id="csv-upload-input" accept=".csv" style="display: none;">
+                    <button id="csv-upload-btn" class="btn btn--primary upload-btn">Choose File</button>
                     <a href="#" class="format-info-link" id="format-info-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -70,6 +72,27 @@
                     </a>
                 </div>
 
+            </div>
+
+            <button id="process-btn" class="btn" style="background-color: #FF5B00; color: white; margin: 2rem auto; display: none; padding: 1rem 2rem; border-radius: 4px; font-weight: 600; cursor: pointer; border: none;">Run QC Analysis</button>
+
+            <div id="results-section" style="display: none; width: 100%; margin-top: 2rem; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                <div id="progress-indicator" style="margin-bottom: 1.5rem; color: #fff; font-weight: 500;"></div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; color: #fff;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 1rem; text-align: left;">Filename</th>
+                                <th style="padding: 1rem; text-align: left;">Score</th>
+                                <th style="padding: 1rem; text-align: left;">Status</th>
+                                <th style="padding: 1rem; text-align: left;">Summary</th>
+                                <th style="padding: 1rem; text-align: left;">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <!-- Informational Panel -->
@@ -248,6 +271,7 @@ audio3,"This can also work without the .wav extension"</code></pre>
         </div>
     </div>
 
+    <script src="voiceqc-ai.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('format-modal');
